@@ -2,7 +2,7 @@
 
 **Spot the repeat. Keep the change.** Compare two short sets of English notes with a local open-weight sentence model, without deleting or rewriting any current note.
 
-This is a new local prototype started on **21 October 2026**. It is not publicly deployed or entered in a competition yet. There is no customer, award or income. The application, comparison logic, fixtures and writing are new; only licensed general-purpose model/runtime files are reused.
+This is a new application started on **21 October 2026**. [Try the public demo](https://yifuwu0828.github.io/readonce/), open the [actual-model checks page](https://yifuwu0828.github.io/readonce/validation.html), or inspect the [public source](https://github.com/yifuwu0828/readonce). There is no customer, award or income. The application, comparison logic, fixtures and writing are new; only licensed general-purpose model/runtime files are reused.
 
 ## Run locally
 
