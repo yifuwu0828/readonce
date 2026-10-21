@@ -1,0 +1,21 @@
+// Frozen before the first real-model run. Labels are authored expectations,
+// not proof of semantic equivalence and not a representative user study.
+export const fixtures = [
+  { id: 'cal-checklist', split: 'calibration', before: ['Use the shared checklist when reviewing the drawing package.'], after: ['Review the drawing package using the shared checklist.'], expected: ['repeat'] },
+  { id: 'cal-local-copy', split: 'calibration', before: ['Keep a local copy of the source files for reference.'], after: ['Save the source files locally so they can be consulted later.'], expected: ['repeat'] },
+  { id: 'cal-appendix', split: 'calibration', before: ['Put the long reference links in a separate appendix.'], after: ['Move lengthy reference URLs into their own appendix.'], expected: ['repeat'] },
+  { id: 'cal-meeting', split: 'calibration', before: ['Bring the current checklist to the coordination meeting.'], after: ['Take the latest checklist along to the coordination meeting.'], expected: ['repeat'] },
+  { id: 'hold-sketch', split: 'heldout', before: ['Sketch the intake form before changing the layout.'], after: ['Draw a rough intake form before revising its layout.'], expected: ['repeat'] },
+  { id: 'hold-archive', split: 'heldout', before: ['Store the reference drawings together in one folder.'], after: ['Keep the reference drawings in a single folder.'], expected: ['repeat'] },
+  { id: 'hold-exact', split: 'heldout', before: ['  Keep the sample note. '], after: ['keep   the sample note.'], expected: ['repeat'] },
+  { id: 'hold-amount', split: 'heldout', before: ['Budget for the sample is 50 USD.'], after: ['Budget for the sample is 75 USD.'], expected: ['review'] },
+  { id: 'hold-negation', split: 'heldout', before: ['Do not publish the draft report.'], after: ['Publish the draft report.'], expected: ['review'] },
+  { id: 'hold-status', split: 'heldout', before: ['The sample report was approved.'], after: ['The sample report was rejected.'], expected: ['review'] },
+  { id: 'hold-weekday', split: 'heldout', before: ['Review the sample on Monday.'], after: ['Review the sample on Tuesday.'], expected: ['review'] },
+  { id: 'hold-currency', split: 'heldout', before: ['The example costs 50 USD.'], after: ['The example costs 50 EUR.'], expected: ['review'] },
+  { id: 'hold-identifier', split: 'heldout', before: ['Use document R02 for the example.'], after: ['Use document R03 for the example.'], expected: ['review'] },
+  { id: 'hold-unrelated', split: 'heldout', before: ['Keep the reference drawings in one folder.'], after: ['Water the plants near the kitchen window.'], expected: ['review'] },
+  { id: 'hold-ambiguous', split: 'heldout', before: ['Store the reference drawings in a single folder.', 'Keep the reference drawings together in one folder.'], after: ['Put the reference drawings into one folder.'], expected: ['review'] },
+  { id: 'hold-reuse', split: 'heldout', before: ['Keep the source files locally for reference.'], after: ['Keep the source files locally for reference.', 'Save the source files locally so they can be consulted later.'], expected: ['repeat', 'review'] },
+  { id: 'adversarial-role-swap', split: 'adversarial', before: ['Alice reviews the report written by Bob.'], after: ['Bob reviews the report written by Alice.'], expected: ['review'], note: 'Known risk: embeddings and lexical guards do not establish who did what.' },
+];

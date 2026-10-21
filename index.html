@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; img-src 'self' data:; script-src 'self' 'wasm-unsafe-eval' 'sha256-F3yoA+c913lvwFzoJByviA1l9wHOb7am3I+8MgFaYss='; worker-src 'self' blob:; style-src 'self'; object-src 'none'; base-uri 'self'">
+  <meta name="description" content="Compare two sets of notes with local open-weight embeddings. Every original stays visible.">
+  <title>ReadOnce — spot the repeat, keep the change</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"onnxruntime-web":"./vendor/onnx/ort.wasm.bundle.min.mjs","onnxruntime-common":"./vendor/onnx/ort.wasm.bundle.min.mjs"}}</script><script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <header class="wrap topbar"><a class="wordmark" href="./">Read<span>Once</span><span class="mark" aria-hidden="true">↗</span></a><nav aria-label="Main"><a href="#how">How it works</a><a href="./validation.html">Evidence</a><a href="./README.md">Readme</a></nav></header>
+  <main class="wrap">
+    <section class="hero"><p class="eyebrow">A QUIETER WAY TO CATCH UP</p><h1>Spot the repeat.<br><em>Keep the change.</em></h1><p class="lead">Two versions of the same update? Let a small local model suggest what sounds familiar. Keep every original line, especially when the details change.</p><div class="pills"><span>Local open-weight model</span><span>No account or API key</span><span>Every line stays yours</span></div></section>
+    <section class="workspace" aria-labelledby="compare-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / COMPARE</p><h2 id="compare-title">A little less rereading.</h2></div><button id="sample" class="quiet">Load synthetic example ↙</button></div>
+      <div class="inputs"><div class="input-card"><label for="before">Earlier notes <span>THE REFERENCE</span></label><textarea id="before" spellcheck="false" placeholder="One note per line…" aria-describedby="input-help"></textarea><p id="before-count" class="counter">0 notes</p></div><div class="input-card current"><label for="after">Current notes <span>WHAT YOU NEED TO READ</span></label><textarea id="after" spellcheck="false" placeholder="Paste the newer version…" aria-describedby="input-help"></textarea><p id="after-count" class="counter">0 notes</p></div></div>
+      <p id="input-help" class="help">English prototype · up to 50 nonblank notes per side · 500 characters per line · 16,000 per box. Compare important details yourself. Names, relationships and subtle meaning can still fool the model.</p>
+      <div class="actions"><button id="compare" class="primary">Compare with local AI <span aria-hidden="true">→</span></button><button id="exact" class="secondary">Exact-text baseline</button><button id="clear" class="quiet">Clear</button><p id="status" role="status" aria-live="polite">Ready. The model loads only when you compare with AI.</p></div>
+    </section>
+    <section id="output" class="output" aria-labelledby="results-title" hidden><div class="section-heading"><div><p class="eyebrow">02 / READ WITH CONTEXT</p><h2 id="results-title">Every current note, accounted for.</h2></div><button id="download" class="secondary">Download audit JSON ↓</button></div><div id="stats" class="stats"></div><p id="timing" class="help"></p><p class="help">A similarity score is a cosine, not a probability. “Possible repeat” means check the two quotes. No notes are removed or rewritten.</p><div id="results"></div></section>
+    <section id="how" class="how"><div><p class="eyebrow">SMALL MODEL. VISIBLE REASONS.</p><h2>A suggestion,<br>with the receipts.</h2></div><ol><li><strong>Match the meaning.</strong> A pinned, open-weight MiniLM model embeds both sets locally in your browser. Model files are about 23 MB, plus the runtime.</li><li><strong>Check the details.</strong> Lexical guards look for changes to quantities, dates, negation, selected status words and uppercase identifiers. Close or reused matches go to review.</li><li><strong>Keep the originals.</strong> Every current note and its earlier reference remain visible. The audit includes text, scores, reasons, settings and measured timings.</li></ol></section>
+    <aside class="limitations"><strong>Know the boundary.</strong> The model reads at most 256 tokens per note. The guards are incomplete and can also flag harmless rewrites. This is an English prototype for short notes, not a factual verifier or an approval tool. Test with non-sensitive text; your hosted copy still trusts its host and your browser. No application upload endpoint, external model request, telemetry or persistent note storage is included.</aside>
+  </main>
+  <footer class="wrap"><span>Made for slower, more deliberate reading.</span><a href="./THIRD_PARTY.md">Model & library notices</a><a href="./validation.html">See actual model checks →</a></footer>
+</body>
+</html>

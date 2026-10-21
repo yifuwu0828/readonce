@@ -1,0 +1,87 @@
+{
+  "model_id": "Xenova/all-MiniLM-L6-v2",
+  "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9",
+  "runtime_version": "3.8.1",
+  "new_application_code_reused": false,
+  "assets": [
+    {
+      "path": "vendor/transformers.web.js",
+      "bytes": 1777240,
+      "sha256": "1b41438d839ca3ea1346031472edee8cb3eefbf0bad48945f969559e2eb03394",
+      "source": "https://registry.npmjs.org/@huggingface/transformers/-/transformers-3.8.1.tgz"
+    },
+    {
+      "path": "vendor/package.json",
+      "bytes": 2694,
+      "sha256": "00c02ca357bf03c801f33c9a431c0169b99c1de1e14f2134cabc902cce53d4f3",
+      "source": "https://registry.npmjs.org/@huggingface/transformers/-/transformers-3.8.1.tgz"
+    },
+    {
+      "path": "vendor/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "source": "https://registry.npmjs.org/@huggingface/transformers/-/transformers-3.8.1.tgz"
+    },
+    {
+      "path": "vendor/onnx/ort.wasm.bundle.min.mjs",
+      "bytes": 48022,
+      "sha256": "ce886d4ba4d4612eb288715bc23794dd3fadbc9c83e27d2d984df4d1ba149524",
+      "source": "https://registry.npmjs.org/onnxruntime-web/-/onnxruntime-web-1.22.0-dev.20250409-89f8206ba4.tgz"
+    },
+    {
+      "path": "vendor/onnx/ort-wasm-simd-threaded.wasm",
+      "bytes": 11133407,
+      "sha256": "f061472c6e77d6d50d079aacdc0ff9b63fee287ddd2cbf46cf62438d3891de2b",
+      "source": "https://registry.npmjs.org/onnxruntime-web/-/onnxruntime-web-1.22.0-dev.20250409-89f8206ba4.tgz"
+    },
+    {
+      "path": "vendor/onnx/ort-wasm-simd-threaded.mjs",
+      "bytes": 20856,
+      "sha256": "43c25054b6b9ac000f786c65545ff83a45f871e0e310e8c2f4d48a363bb66db4",
+      "source": "https://registry.npmjs.org/onnxruntime-web/-/onnxruntime-web-1.22.0-dev.20250409-89f8206ba4.tgz"
+    },
+    {
+      "path": "vendor/onnx/LICENSE",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "source": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.22.0/LICENSE"
+    },
+    {
+      "path": "models/Xenova/all-MiniLM-L6-v2/config.json",
+      "bytes": 650,
+      "sha256": "7135149f7cffa1a573466c6e4d8423ed73b62fd2332c575bf738a0d033f70df7",
+      "source": "https://huggingface.co/Xenova/all-MiniLM-L6-v2/resolve/751bff37182d3f1213fa05d7196b954e230abad9/config.json"
+    },
+    {
+      "path": "models/Xenova/all-MiniLM-L6-v2/README.md",
+      "bytes": 1767,
+      "sha256": "63ea99bf681a2e9eda4f6a537d5ed8fda95d1677111656da37e9cfd080c3af02",
+      "source": "https://huggingface.co/Xenova/all-MiniLM-L6-v2/resolve/751bff37182d3f1213fa05d7196b954e230abad9/README.md"
+    },
+    {
+      "path": "models/Xenova/all-MiniLM-L6-v2/special_tokens_map.json",
+      "bytes": 125,
+      "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "source": "https://huggingface.co/Xenova/all-MiniLM-L6-v2/resolve/751bff37182d3f1213fa05d7196b954e230abad9/special_tokens_map.json"
+    },
+    {
+      "path": "models/Xenova/all-MiniLM-L6-v2/tokenizer.json",
+      "bytes": 711661,
+      "sha256": "da0e79933b9ed51798a3ae27893d3c5fa4a201126cef75586296df9b4d2c62a0",
+      "source": "https://huggingface.co/Xenova/all-MiniLM-L6-v2/resolve/751bff37182d3f1213fa05d7196b954e230abad9/tokenizer.json"
+    },
+    {
+      "path": "models/Xenova/all-MiniLM-L6-v2/tokenizer_config.json",
+      "bytes": 366,
+      "sha256": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+      "source": "https://huggingface.co/Xenova/all-MiniLM-L6-v2/resolve/751bff37182d3f1213fa05d7196b954e230abad9/tokenizer_config.json"
+    },
+    {
+      "path": "models/Xenova/all-MiniLM-L6-v2/onnx/model_quantized.onnx",
+      "bytes": 22972370,
+      "sha256": "afdb6f1a0e45b715d0bb9b11772f032c399babd23bfc31fed1c170afc848bdb1",
+      "source": "https://huggingface.co/Xenova/all-MiniLM-L6-v2/resolve/751bff37182d3f1213fa05d7196b954e230abad9/onnx/model_quantized.onnx"
+    }
+  ],
+  "recorded_at_utc": "2026-10-21T11:48:41.442731+00:00"
+}
