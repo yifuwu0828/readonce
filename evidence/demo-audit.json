@@ -1,0 +1,127 @@
+{
+  "schema": "readonce.audit.v1",
+  "createdAt": "2026-10-21T11:44:59.680Z",
+  "mode": "local_embeddings",
+  "model": {
+    "id": "Xenova/all-MiniLM-L6-v2",
+    "revision": "751bff37182d3f1213fa05d7196b954e230abad9",
+    "dtype": "q8",
+    "dimensions": 384,
+    "runtime": "Transformers.js 3.8.1"
+  },
+  "timing": {
+    "loadMs": 228.79999995231628,
+    "inferenceMs": 97.19999992847443,
+    "alreadyLoaded": false
+  },
+  "input": {
+    "before": [
+      "Use the shared checklist when reviewing the drawing package.",
+      "Budget for the sample is 50 USD.",
+      "Do not publish the draft report.",
+      "Put the long reference links in a separate appendix."
+    ],
+    "after": [
+      "Review the drawing package using the shared checklist.",
+      "Budget for the sample is 75 USD.",
+      "Publish the draft report.",
+      "Move lengthy reference URLs into their own appendix.",
+      "Ask the coordinator which source version should be used."
+    ]
+  },
+  "analysis": {
+    "results": [
+      {
+        "afterIndex": 0,
+        "afterText": "Review the drawing package using the shared checklist.",
+        "beforeIndex": 0,
+        "beforeText": "Use the shared checklist when reviewing the drawing package.",
+        "score": 0.9148907938401533,
+        "status": "semantic_repeat_candidate",
+        "reason": "High, separated similarity and equal protected lexical facts suggest a repeat; this is not proof of equivalence.",
+        "protectedChanges": []
+      },
+      {
+        "afterIndex": 1,
+        "afterText": "Budget for the sample is 75 USD.",
+        "beforeIndex": 1,
+        "beforeText": "Budget for the sample is 50 USD.",
+        "score": 0.9030428637652478,
+        "status": "protected_change",
+        "reason": "Protected lexical facts differ; retain this current note for review despite its high score.",
+        "protectedChanges": [
+          {
+            "type": "numbers",
+            "before": [
+              "50"
+            ],
+            "after": [
+              "75"
+            ]
+          }
+        ]
+      },
+      {
+        "afterIndex": 2,
+        "afterText": "Publish the draft report.",
+        "beforeIndex": 2,
+        "beforeText": "Do not publish the draft report.",
+        "score": 0.6668515514896668,
+        "status": "needs_review",
+        "reason": "The best cosine score is below the configured threshold.",
+        "protectedChanges": [
+          {
+            "type": "negations",
+            "before": [
+              "not"
+            ],
+            "after": []
+          }
+        ]
+      },
+      {
+        "afterIndex": 3,
+        "afterText": "Move lengthy reference URLs into their own appendix.",
+        "beforeIndex": 3,
+        "beforeText": "Put the long reference links in a separate appendix.",
+        "score": 0.8494136334447994,
+        "status": "semantic_repeat_candidate",
+        "reason": "High, separated similarity and equal protected lexical facts suggest a repeat; this is not proof of equivalence.",
+        "protectedChanges": []
+      },
+      {
+        "afterIndex": 4,
+        "afterText": "Ask the coordinator which source version should be used.",
+        "beforeIndex": 0,
+        "beforeText": "Use the shared checklist when reviewing the drawing package.",
+        "score": 0.3243670504809851,
+        "status": "needs_review",
+        "reason": "The best prior note is already reserved; it is shown as a reference, not assigned again.",
+        "protectedChanges": []
+      }
+    ],
+    "stats": {
+      "total": 5,
+      "exactRepeat": 0,
+      "semanticRepeat": 2,
+      "protectedChange": 1,
+      "needsReview": 2
+    },
+    "config": {
+      "threshold": 0.82,
+      "margin": 0.06,
+      "maxNotes": 50,
+      "maxLineLength": 500,
+      "maxInputLength": 16000,
+      "vectorDimension": 384,
+      "modelScoresAvailable": true
+    }
+  },
+  "limitations": [
+    "Candidates are not proof of equivalence.",
+    "All current notes are retained.",
+    "Lexical guards are incomplete.",
+    "English prototype; model context at most 256 tokens per note.",
+    "Synthetic tests do not establish human time savings."
+  ]
+}

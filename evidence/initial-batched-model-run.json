@@ -1,0 +1,804 @@
+{
+  "schema": "readonce.model-evidence.v1",
+  "startedAt": "2026-10-21T11:42:29.405Z",
+  "completedAt": "2026-10-21T11:42:29.758Z",
+  "model": {
+    "id": "Xenova/all-MiniLM-L6-v2",
+    "revision": "751bff37182d3f1213fa05d7196b954e230abad9",
+    "dtype": "q8",
+    "dimensions": 384,
+    "runtime": "Transformers.js 3.8.1"
+  },
+  "settings": {
+    "threshold": 0.82,
+    "margin": 0.06,
+    "pooling": "mean",
+    "normalize": true,
+    "maxTokens": 256,
+    "device": "wasm",
+    "threads": 1
+  },
+  "timing": {
+    "loadMs": 160.5,
+    "inferenceMs": 189.39999997615814,
+    "alreadyLoaded": false,
+    "uniqueNotes": 34
+  },
+  "totals": {
+    "calibration": {
+      "cases": 4,
+      "passed": 3,
+      "baselinePassed": 0,
+      "failedIds": [
+        "cal-local-copy"
+      ]
+    },
+    "heldout": {
+      "cases": 12,
+      "passed": 12,
+      "baselinePassed": 10,
+      "failedIds": []
+    },
+    "adversarial": {
+      "cases": 1,
+      "passed": 0,
+      "baselinePassed": 1,
+      "failedIds": [
+        "adversarial-role-swap"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "cal-checklist",
+      "split": "calibration",
+      "before": [
+        "Use the shared checklist when reviewing the drawing package."
+      ],
+      "after": [
+        "Review the drawing package using the shared checklist."
+      ],
+      "expected": [
+        "repeat"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Review the drawing package using the shared checklist.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Review the drawing package using the shared checklist.",
+          "beforeIndex": 0,
+          "beforeText": "Use the shared checklist when reviewing the drawing package.",
+          "score": 0.9384314255903587,
+          "status": "semantic_repeat_candidate",
+          "reason": "High, separated similarity and equal protected lexical facts suggest a repeat; this is not proof of equivalence.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": true,
+      "baselinePassed": false
+    },
+    {
+      "id": "cal-local-copy",
+      "split": "calibration",
+      "before": [
+        "Keep a local copy of the source files for reference."
+      ],
+      "after": [
+        "Save the source files locally so they can be consulted later."
+      ],
+      "expected": [
+        "repeat"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Save the source files locally so they can be consulted later.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Save the source files locally so they can be consulted later.",
+          "beforeIndex": 0,
+          "beforeText": "Keep a local copy of the source files for reference.",
+          "score": 0.7963253172925935,
+          "status": "needs_review",
+          "reason": "The best cosine score is below the configured threshold.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": false,
+      "baselinePassed": false
+    },
+    {
+      "id": "cal-appendix",
+      "split": "calibration",
+      "before": [
+        "Put the long reference links in a separate appendix."
+      ],
+      "after": [
+        "Move lengthy reference URLs into their own appendix."
+      ],
+      "expected": [
+        "repeat"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Move lengthy reference URLs into their own appendix.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Move lengthy reference URLs into their own appendix.",
+          "beforeIndex": 0,
+          "beforeText": "Put the long reference links in a separate appendix.",
+          "score": 0.8582430497389387,
+          "status": "semantic_repeat_candidate",
+          "reason": "High, separated similarity and equal protected lexical facts suggest a repeat; this is not proof of equivalence.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": true,
+      "baselinePassed": false
+    },
+    {
+      "id": "cal-meeting",
+      "split": "calibration",
+      "before": [
+        "Bring the current checklist to the coordination meeting."
+      ],
+      "after": [
+        "Take the latest checklist along to the coordination meeting."
+      ],
+      "expected": [
+        "repeat"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Take the latest checklist along to the coordination meeting.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Take the latest checklist along to the coordination meeting.",
+          "beforeIndex": 0,
+          "beforeText": "Bring the current checklist to the coordination meeting.",
+          "score": 0.9288558816895657,
+          "status": "semantic_repeat_candidate",
+          "reason": "High, separated similarity and equal protected lexical facts suggest a repeat; this is not proof of equivalence.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": true,
+      "baselinePassed": false
+    },
+    {
+      "id": "hold-sketch",
+      "split": "heldout",
+      "before": [
+        "Sketch the intake form before changing the layout."
+      ],
+      "after": [
+        "Draw a rough intake form before revising its layout."
+      ],
+      "expected": [
+        "repeat"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Draw a rough intake form before revising its layout.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Draw a rough intake form before revising its layout.",
+          "beforeIndex": 0,
+          "beforeText": "Sketch the intake form before changing the layout.",
+          "score": 0.8266707496315137,
+          "status": "semantic_repeat_candidate",
+          "reason": "High, separated similarity and equal protected lexical facts suggest a repeat; this is not proof of equivalence.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": true,
+      "baselinePassed": false
+    },
+    {
+      "id": "hold-archive",
+      "split": "heldout",
+      "before": [
+        "Store the reference drawings together in one folder."
+      ],
+      "after": [
+        "Keep the reference drawings in a single folder."
+      ],
+      "expected": [
+        "repeat"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Keep the reference drawings in a single folder.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Keep the reference drawings in a single folder.",
+          "beforeIndex": 0,
+          "beforeText": "Store the reference drawings together in one folder.",
+          "score": 0.9383413448088297,
+          "status": "semantic_repeat_candidate",
+          "reason": "High, separated similarity and equal protected lexical facts suggest a repeat; this is not proof of equivalence.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": true,
+      "baselinePassed": false
+    },
+    {
+      "id": "hold-exact",
+      "split": "heldout",
+      "before": [
+        "  Keep the sample note. "
+      ],
+      "after": [
+        "keep   the sample note."
+      ],
+      "expected": [
+        "repeat"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "keep   the sample note.",
+          "beforeIndex": 0,
+          "beforeText": "  Keep the sample note. ",
+          "score": null,
+          "status": "exact_repeat",
+          "reason": "Identical after folding whitespace and case only; no model score was required.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "keep   the sample note.",
+          "beforeIndex": 0,
+          "beforeText": "  Keep the sample note. ",
+          "score": 1,
+          "status": "exact_repeat",
+          "reason": "Identical after folding whitespace and case only; no model score was required.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "hold-amount",
+      "split": "heldout",
+      "before": [
+        "Budget for the sample is 50 USD."
+      ],
+      "after": [
+        "Budget for the sample is 75 USD."
+      ],
+      "expected": [
+        "review"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Budget for the sample is 75 USD.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Budget for the sample is 75 USD.",
+          "beforeIndex": 0,
+          "beforeText": "Budget for the sample is 50 USD.",
+          "score": 0.9083342849679633,
+          "status": "protected_change",
+          "reason": "Protected lexical facts differ; retain this current note for review despite its high score.",
+          "protectedChanges": [
+            {
+              "type": "numbers",
+              "before": [
+                "50"
+              ],
+              "after": [
+                "75"
+              ]
+            }
+          ]
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "hold-negation",
+      "split": "heldout",
+      "before": [
+        "Do not publish the draft report."
+      ],
+      "after": [
+        "Publish the draft report."
+      ],
+      "expected": [
+        "review"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Publish the draft report.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Publish the draft report.",
+          "beforeIndex": 0,
+          "beforeText": "Do not publish the draft report.",
+          "score": 0.7035537798274699,
+          "status": "needs_review",
+          "reason": "The best cosine score is below the configured threshold.",
+          "protectedChanges": [
+            {
+              "type": "negations",
+              "before": [
+                "not"
+              ],
+              "after": []
+            }
+          ]
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "hold-status",
+      "split": "heldout",
+      "before": [
+        "The sample report was approved."
+      ],
+      "after": [
+        "The sample report was rejected."
+      ],
+      "expected": [
+        "review"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "The sample report was rejected.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "The sample report was rejected.",
+          "beforeIndex": 0,
+          "beforeText": "The sample report was approved.",
+          "score": 0.7063932170653756,
+          "status": "needs_review",
+          "reason": "The best cosine score is below the configured threshold.",
+          "protectedChanges": [
+            {
+              "type": "statuses",
+              "before": [
+                "approved"
+              ],
+              "after": [
+                "rejected"
+              ]
+            }
+          ]
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "hold-weekday",
+      "split": "heldout",
+      "before": [
+        "Review the sample on Monday."
+      ],
+      "after": [
+        "Review the sample on Tuesday."
+      ],
+      "expected": [
+        "review"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Review the sample on Tuesday.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Review the sample on Tuesday.",
+          "beforeIndex": 0,
+          "beforeText": "Review the sample on Monday.",
+          "score": 0.9588281397834267,
+          "status": "protected_change",
+          "reason": "Protected lexical facts differ; retain this current note for review despite its high score.",
+          "protectedChanges": [
+            {
+              "type": "dates",
+              "before": [
+                "monday"
+              ],
+              "after": [
+                "tuesday"
+              ]
+            }
+          ]
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "hold-currency",
+      "split": "heldout",
+      "before": [
+        "The example costs 50 USD."
+      ],
+      "after": [
+        "The example costs 50 EUR."
+      ],
+      "expected": [
+        "review"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "The example costs 50 EUR.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "The example costs 50 EUR.",
+          "beforeIndex": 0,
+          "beforeText": "The example costs 50 USD.",
+          "score": 0.8029611344781844,
+          "status": "needs_review",
+          "reason": "The best cosine score is below the configured threshold.",
+          "protectedChanges": [
+            {
+              "type": "identifiers",
+              "before": [
+                "usd"
+              ],
+              "after": [
+                "eur"
+              ]
+            }
+          ]
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "hold-identifier",
+      "split": "heldout",
+      "before": [
+        "Use document R02 for the example."
+      ],
+      "after": [
+        "Use document R03 for the example."
+      ],
+      "expected": [
+        "review"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Use document R03 for the example.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Use document R03 for the example.",
+          "beforeIndex": 0,
+          "beforeText": "Use document R02 for the example.",
+          "score": 0.9373449086895208,
+          "status": "protected_change",
+          "reason": "Protected lexical facts differ; retain this current note for review despite its high score.",
+          "protectedChanges": [
+            {
+              "type": "numbers",
+              "before": [
+                "02"
+              ],
+              "after": [
+                "03"
+              ]
+            }
+          ]
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "hold-unrelated",
+      "split": "heldout",
+      "before": [
+        "Keep the reference drawings in one folder."
+      ],
+      "after": [
+        "Water the plants near the kitchen window."
+      ],
+      "expected": [
+        "review"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Water the plants near the kitchen window.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Water the plants near the kitchen window.",
+          "beforeIndex": 0,
+          "beforeText": "Keep the reference drawings in one folder.",
+          "score": 0.11399014056286272,
+          "status": "needs_review",
+          "reason": "The best cosine score is below the configured threshold.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "hold-ambiguous",
+      "split": "heldout",
+      "before": [
+        "Store the reference drawings in a single folder.",
+        "Keep the reference drawings together in one folder."
+      ],
+      "after": [
+        "Put the reference drawings into one folder."
+      ],
+      "expected": [
+        "review"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Put the reference drawings into one folder.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Put the reference drawings into one folder.",
+          "beforeIndex": 1,
+          "beforeText": "Keep the reference drawings together in one folder.",
+          "score": 0.9524682780437388,
+          "status": "needs_review",
+          "reason": "The best and runner-up scores are too close; the match is ambiguous.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "hold-reuse",
+      "split": "heldout",
+      "before": [
+        "Keep the source files locally for reference."
+      ],
+      "after": [
+        "Keep the source files locally for reference.",
+        "Save the source files locally so they can be consulted later."
+      ],
+      "expected": [
+        "repeat",
+        "review"
+      ],
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Keep the source files locally for reference.",
+          "beforeIndex": 0,
+          "beforeText": "Keep the source files locally for reference.",
+          "score": null,
+          "status": "exact_repeat",
+          "reason": "Identical after folding whitespace and case only; no model score was required.",
+          "protectedChanges": []
+        },
+        {
+          "afterIndex": 1,
+          "afterText": "Save the source files locally so they can be consulted later.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Keep the source files locally for reference.",
+          "beforeIndex": 0,
+          "beforeText": "Keep the source files locally for reference.",
+          "score": 0.9999999999999996,
+          "status": "exact_repeat",
+          "reason": "Identical after folding whitespace and case only; no model score was required.",
+          "protectedChanges": []
+        },
+        {
+          "afterIndex": 1,
+          "afterText": "Save the source files locally so they can be consulted later.",
+          "beforeIndex": 0,
+          "beforeText": "Keep the source files locally for reference.",
+          "score": 0.807227264970842,
+          "status": "needs_review",
+          "reason": "The best prior note is already reserved; it is shown as a reference, not assigned again.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": true,
+      "baselinePassed": true
+    },
+    {
+      "id": "adversarial-role-swap",
+      "split": "adversarial",
+      "before": [
+        "Alice reviews the report written by Bob."
+      ],
+      "after": [
+        "Bob reviews the report written by Alice."
+      ],
+      "expected": [
+        "review"
+      ],
+      "note": "Known risk: embeddings and lexical guards do not establish who did what.",
+      "baseline": [
+        {
+          "afterIndex": 0,
+          "afterText": "Bob reviews the report written by Alice.",
+          "beforeIndex": null,
+          "beforeText": null,
+          "score": null,
+          "status": "needs_review",
+          "reason": "No embeddings supplied; this note is not an exact repeat.",
+          "protectedChanges": []
+        }
+      ],
+      "actual": [
+        {
+          "afterIndex": 0,
+          "afterText": "Bob reviews the report written by Alice.",
+          "beforeIndex": 0,
+          "beforeText": "Alice reviews the report written by Bob.",
+          "score": 0.975723260109134,
+          "status": "semantic_repeat_candidate",
+          "reason": "High, separated similarity and equal protected lexical facts suggest a repeat; this is not proof of equivalence.",
+          "protectedChanges": []
+        }
+      ],
+      "passed": false,
+      "baselinePassed": true
+    }
+  ],
+  "caveats": [
+    "Synthetic labels, not real-user accuracy or time savings.",
+    "All current originals remain visible even for wrong candidates.",
+    "Cosine is not a probability.",
+    "No threshold tuning after seeing these cases."
+  ]
+}

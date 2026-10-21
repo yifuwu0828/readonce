@@ -1,0 +1,75 @@
+{
+  "schema": "readonce.audit.v1",
+  "createdAt": "2026-10-21T11:44:43.699Z",
+  "mode": "exact_text",
+  "model": null,
+  "timing": null,
+  "input": {
+    "before": [
+      "<img src=x onerror=alert(\"sample\")>",
+      "Repeat note."
+    ],
+    "after": [
+      "<img src=x onerror=alert(\"sample\")>",
+      "New <script>alert(\"sample\")</script> & quote.",
+      "repeat note."
+    ]
+  },
+  "analysis": {
+    "results": [
+      {
+        "afterIndex": 0,
+        "afterText": "<img src=x onerror=alert(\"sample\")>",
+        "beforeIndex": 0,
+        "beforeText": "<img src=x onerror=alert(\"sample\")>",
+        "score": null,
+        "status": "exact_repeat",
+        "reason": "Identical after folding whitespace and case only; no model score was required.",
+        "protectedChanges": []
+      },
+      {
+        "afterIndex": 1,
+        "afterText": "New <script>alert(\"sample\")</script> & quote.",
+        "beforeIndex": null,
+        "beforeText": null,
+        "score": null,
+        "status": "needs_review",
+        "reason": "No embeddings supplied; this note is not an exact repeat.",
+        "protectedChanges": []
+      },
+      {
+        "afterIndex": 2,
+        "afterText": "repeat note.",
+        "beforeIndex": 1,
+        "beforeText": "Repeat note.",
+        "score": null,
+        "status": "exact_repeat",
+        "reason": "Identical after folding whitespace and case only; no model score was required.",
+        "protectedChanges": []
+      }
+    ],
+    "stats": {
+      "total": 3,
+      "exactRepeat": 2,
+      "semanticRepeat": 0,
+      "protectedChange": 0,
+      "needsReview": 1
+    },
+    "config": {
+      "threshold": 0.82,
+      "margin": 0.06,
+      "maxNotes": 50,
+      "maxLineLength": 500,
+      "maxInputLength": 16000,
+      "vectorDimension": null,
+      "modelScoresAvailable": false
+    }
+  },
+  "limitations": [
+    "Candidates are not proof of equivalence.",
+    "All current notes are retained.",
+    "Lexical guards are incomplete.",
+    "English prototype; model context at most 256 tokens per note.",
+    "Synthetic tests do not establish human time savings."
+  ]
+}
